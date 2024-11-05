@@ -10,18 +10,16 @@ export const Gallery = () => {
     <>
 
         <h1>buscador de fotos</h1>
+
+        < Form />
         
         <section>
         {
-            categories.map((category)=>{
+            categories.map((category)=>  //return implicito. sin llaves
+                    < GridGallery key={category} category={category}/>  
+                     //en las iteraciones siempre mandamos key y los argumentos que queramos recibir de funciones en otros componentes   
+            )
 
-                <article>
-                    < GridGallery key={category} category={category}/>
-                    < Form />
-                </article>
-                    
-            })
-        
         }    
         </section>   
 

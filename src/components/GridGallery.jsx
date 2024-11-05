@@ -1,6 +1,7 @@
+import {Card} from './Card'
 
 export const GridGallery = ({category}) =>{
-
+                            //argumentos importancion función Gallery
 
     const dataFetch=[
         {
@@ -14,16 +15,19 @@ export const GridGallery = ({category}) =>{
     ]
     return(
 
-              <section key={category}> 
-                    <h2>{category}</h2>
-                        {dataFetch.map(({nombre, id})=>
-                        {   <>
-                            <h3>{nombre}</h3>
-                            <h4>{id}</h4>
-                            </>
-                        })
-                        }
+    <>
+        
+        {dataFetch.map(({nombre, id})=>
+            <Card key={id} id={id} nombre={nombre}/>
 
-              </section>
-    )
+            )
+        }
+       
+    
+    
+  
+              
+    </>    
+        )
+    
 }
